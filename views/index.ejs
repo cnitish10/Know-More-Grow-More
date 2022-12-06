@@ -1,0 +1,24 @@
+<%- include('partials/header') -%>
+
+<% blogs.forEach((x)=>{ %>
+    <div class="ui main text container segment">
+        <div class="huge-header"><%= x.title %></div>
+        <div class="ui top-attached">
+            <div class="item">
+                <span><%= x.comapny%></span>
+                <div class="content">
+                    <span><%= x.created.toDateString() %></span>
+                </div>
+                <div class="description">
+                    <p><%= x.body.substring(0,100) %>...</p>
+                   
+                    <button class="ui purple basic button"><a href="/blogs/<%=x._id%>">Read more</a></button>
+                </div>
+            </div>
+        </div>
+       
+       
+    </div>
+    
+<% })%>
+<%- include('partials/footer') -%>
